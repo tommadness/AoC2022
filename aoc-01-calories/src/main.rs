@@ -3,12 +3,7 @@ use std::fs;
 use std::str::Split;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file_path = &args[1];
-
-    println!("Reading file: {file_path}");
-
-    let contents = fs::read_to_string(file_path).expect("Failed to read!");
+    let contents = fs::read_to_string("aoc-01-calories/input.txt").expect("Failed to read!");
     let elves: Split<&str> = contents.split("\n\n");
 
     let mut elf_food_list = vec![];
