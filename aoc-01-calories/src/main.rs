@@ -12,7 +12,9 @@ fn main() {
         let mut elf_total = 0;
         for food in elf_pack {
             println!("Food: {food}");
-            if !food.is_empty(){elf_total += food.parse::<i32>().unwrap()};
+            if !food.is_empty() {
+                elf_total += food.parse::<i32>().unwrap()
+            };
         }
         elf_food_list.push(elf_total);
     }
@@ -20,7 +22,7 @@ fn main() {
     elf_food_list.sort();
     elf_food_list.reverse();
 
-    let elf_food_total = elf_food_list[0]+elf_food_list[1]+elf_food_list[2];
+    let elf_food_total = elf_food_list[0] + elf_food_list[1] + elf_food_list[2];
 
     println!("Elf Total:{elf_food_total}");
 }
