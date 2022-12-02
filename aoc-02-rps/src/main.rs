@@ -6,15 +6,13 @@ fn main() {
     let contents = fs::read_to_string(file_path).expect("Failed to read!");
 
     let rounds: Vec<Vec<&str>> = contents
+        .trim()
         .split("\n")
         .map(|x| x.trim().split(" ").collect::<Vec<&str>>())
         .collect();
 
     let mut total_points = 0;
     for round in rounds {
-        if round.len() < 2 {
-            break;
-        };
         total_points += evaluate_round(round[0], round[1]);
     }
 
