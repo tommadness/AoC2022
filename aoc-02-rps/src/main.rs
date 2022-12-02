@@ -29,7 +29,10 @@ fn evaluate_round(elf: &str, player: &str) -> i32 {
             "Y",
             HashMap::from([("A", 1 + 3), ("B", 2 + 3), ("C", 3 + 3)]),
         ),
-        ("X", HashMap::from([("A", 3), ("B", 1), ("C", 2)])),
+        (
+            "X",
+            HashMap::from([("A", 3 + 0), ("B", 1 + 0), ("C", 2 + 0)]),
+        ),
     ]);
 
     return points[player][elf];
