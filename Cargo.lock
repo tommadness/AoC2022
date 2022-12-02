@@ -5,3 +5,7 @@ version = 3
 [[package]]
 name = "aoc-01-calories"
 version = "0.1.0"
+
+[[package]]
+name = "aoc-02-rps"
+version = "0.1.0"
