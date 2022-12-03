@@ -3,14 +3,13 @@ use std::str::Split;
 
 fn main() {
     let contents = fs::read_to_string("aoc-01-calories/input.txt").expect("Failed to read!");
-    let elves: Split<&str> = contents.split("\n\n");
+    let elves: Split<&str> = contents.trim().split("\n\n");
 
     let mut elf_food_list = vec![];
 
     for elf in elves {
         let elf_pack: Split<&str> = elf.split("\n");
         let elf_total = elf_pack
-            .filter(|food| !food.is_empty())
             .map(|food| food.parse::<i32>().unwrap())
             .fold(0, |sum, food| sum + food);
 
