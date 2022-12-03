@@ -9,20 +9,18 @@ fn main() {
 
     for elf in elves {
         let elf_pack: Split<&str> = elf.split("\n");
-        let mut elf_total = 0;
-        for food in elf_pack {
-            println!("Food: {food}");
-            if !food.is_empty() {
-                elf_total += food.parse::<i32>().unwrap()
-            };
-        }
+        let elf_total = elf_pack
+            .filter(|food| !food.is_empty())
+            .map(|food| food.parse::<i32>().unwrap())
+            .fold(0, |sum, food| sum + food);
+
         elf_food_list.push(elf_total);
     }
 
     elf_food_list.sort();
     elf_food_list.reverse();
 
-    let elf_food_total = elf_food_list[0] + elf_food_list[1] + elf_food_list[2];
+    let elf_food_total: i32 = elf_food_list.iter().take(3).sum();
 
     println!("Elf Total:{elf_food_total}");
 }
