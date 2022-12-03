@@ -7,7 +7,7 @@ fn main() {
 
     let sacks: Vec<&str> = input.trim().split("\n").collect();
 
-    //one(&sacks);
+    //one(sacks);
     two(sacks);
 }
 
