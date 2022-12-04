@@ -7,11 +7,11 @@ fn main() {
 
     let sacks: Vec<&str> = input.trim().split("\n").collect();
 
-    //one(sacks);
-    two(sacks);
+    one(&sacks);
+    two(&sacks);
 }
 
-fn one(sacks: Vec<&str>) {
+fn one(sacks: &Vec<&str>) {
     let mut intersect = Vec::new();
     for sack in sacks {
         let split_sack = sack.split_at(sack.len() / 2);
@@ -28,7 +28,7 @@ fn one(sacks: Vec<&str>) {
     println! {"Solution 1: {total}"};
 }
 
-fn two(sacks: Vec<&str>) {
+fn two(sacks: &Vec<&str>) {
     let mut intersect = Vec::new();
     let elf_one: Vec<&&str> = sacks.iter().step_by(3).collect();
     let elf_two: Vec<&&str> = sacks.iter().skip(1).step_by(3).collect();
