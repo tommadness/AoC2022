@@ -4,4 +4,5 @@ members = [
     "aoc-01-calories",
     "aoc-02-rps",
     "aoc-03-sack",
+    "aoc-04-clean",
 ]

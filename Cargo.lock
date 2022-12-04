@@ -18,6 +18,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "aoc-04-clean"
+version = "0.1.0"
+dependencies = [
+ "array_tool",
+]
+
+[[package]]
 name = "array_tool"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
